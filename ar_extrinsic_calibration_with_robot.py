@@ -19,8 +19,8 @@ if __name__ == '__main__':
     marker_frame = 'my_tag_0'
     camera_frame = 'realsense_torso_color_optical_frame'
     base_frame = 'base'
-    gripper_frame = 'right_gripper'
-    marker_to_gripper_offset = [0, 0, -0.02]
+    gripper_frame = 'left_gripper'
+    marker_to_gripper_offset = [-0.015, 0, -0.025]
     marker_rotation_offset = [0, -np.pi/2, 0]  # Rotation in radians (0, -90 degrees, 0)
 
     positions = []
