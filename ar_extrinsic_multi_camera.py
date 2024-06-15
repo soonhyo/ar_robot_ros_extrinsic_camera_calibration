@@ -77,8 +77,10 @@ if __name__ == '__main__':
 
             avg_position, avg_orientation = average_poses(positions, orientations)
 
-            rospy.loginfo("Camera: {}".format(camera_frame))
-            rospy.loginfo("Average Position: {}".format(avg_position))
-            rospy.loginfo("Average Orientation (quaternion): {}".format(avg_orientation))
+            # Format the output as specified
+            position_str = " ".join(["{:.3f}".format(p) for p in avg_position])
+            orientation_str = " ".join(["{:.3f}".format(q) for q in avg_orientation])
+            output = "{} {} {} {} {}".format(position_str, orientation_str, base_frame, camera_frame, 100)
+            rospy.loginfo("myargs: \"{}\"".format(output))
     except rospy.ROSInterruptException:
         pass
